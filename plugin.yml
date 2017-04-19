@@ -1,0 +1,24 @@
+name: Rush4TheDragon
+version: 2.0.0
+description: Rush4TheDragon plugin by DiscowZombie.
+author: DiscowZombie
+main: rush4thedragon.Rush4TheDragon
+website: https://www.spigotmc.org/resources/32512/
+commands:
+    rush4thedragon:
+        description: Rush4TheDragon main command.
+        usage: /<command> pause|unpause|enable|disable
+        permission: r4td.command
+        aliases: [r4td]
+permissions:
+   r4td.*:
+     description: Gives access to all Rush4TheDragon commands
+     default: op
+     children:
+       r4td.status: true
+       r4td.admin: true
+   r4td.status:
+     description: Allowed you to pause or unpause the game.
+   r4td.admin:
+     description: Allowed you to enabled or disabled the plugin.
+     default: op

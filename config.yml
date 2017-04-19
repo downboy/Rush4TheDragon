@@ -1,0 +1,22 @@
+pluginEnabled: true
+dragon: false
+world:
+  name: world
+game:
+  pause: true
+  timer: 0
+  scoreboardName: '&eRush4TheDragon'
+messages:
+  join:
+    ready: '&cA Rush4TheDragon is in pause... &cUse /r4td unpause to unpause the game!'
+    start: '&cA Rush4TheDragon is in progress... Actual time: %time%'
+  pause:
+    unpause: &aGame is now unpaused !
+    pause: &aGame is now paused !
+  unpause:
+    unpause: &cGame is already unpaused !
+    pause: &cGame is already paused !
+  broadcast:
+    unpause: '%prefix% &aGame is now unpaused ! Let''s play !'
+    pause: '%prefix% &aGame is now paused !'
+  finish: '&a&lTHE ENDERDRAGON IS DEAD IN %time%, GG!! :D'
