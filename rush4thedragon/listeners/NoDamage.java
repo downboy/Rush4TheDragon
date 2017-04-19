@@ -19,44 +19,45 @@ public class NoDamage implements Listener {
 	
 	@EventHandler
 	public void onDam(EntityDamageEvent e){
-		if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
+		if(Rush4TheDragon.status && Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
 	}
 	
 	@EventHandler
 	public void onPick(PlayerPickupItemEvent e){
-		if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
+		if(Rush4TheDragon.status && Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
 	}
 	
 	@EventHandler
 	public void onDrop(PlayerDropItemEvent e){
-		if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
+		if(Rush4TheDragon.status && Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
 	}
 	
 	@EventHandler
 	public void onInvInteract(InventoryClickEvent e){
-		if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
+		if(Rush4TheDragon.status && Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
 	}
 	
 	@EventHandler
 	public void onInvInteract(InventoryInteractEvent e){
-		if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
+		if(Rush4TheDragon.status && Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
 	}
 	
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent e){
-		if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
+		if(Rush4TheDragon.status && Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)) e.setCancelled(true);
 	}
 	
 	@EventHandler
 	public void onMove(PlayerMoveEvent e){
 		Player p = e.getPlayer();
-		if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)){
-			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 999999999, 254));
-		}else{
-			if(p.hasPotionEffect(PotionEffectType.SLOW)){
-				p.removePotionEffect(PotionEffectType.SLOW);
+		if (Rush4TheDragon.status){
+			if(Rush4TheDragon.pause && (!Rush4TheDragon.isGameFinish)){
+				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 999999999, 254));
+			}else{
+				if(p.hasPotionEffect(PotionEffectType.SLOW)){
+					p.removePotionEffect(PotionEffectType.SLOW);
+				}
 			}
 		}
 	}
-
 }
