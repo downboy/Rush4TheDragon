@@ -14,7 +14,7 @@ import rush4thedragon.timer.Timer;
 
 public class Rush4TheDragon extends JavaPlugin{
 	
-	public static String version = "2.0.0";	
+	public static String version = "2.0.2";	
 	public static long timer;
 	public static boolean pause;
 	public static String oldText;
